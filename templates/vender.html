@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}Vender producto{% endblock %}
+
+{% block content %}
+<h1>🛒 Vender producto</h1>
+
+<form method="POST">
+    <p>Producto:
+        <select name="producto_id" required>
+            {% for p in productos %}
+                <option value="{{ p.id }}">{{ p.nombre }} (Stock: {{ p.stock }})</option>
+            {% endfor %}
+        </select>
+    </p>
+    <p>Cantidad: <input type="number" name="cantidad" required></p>
+    <button class="btn" type="submit">Vender</button>
+</form>
+{% endblock %}
+

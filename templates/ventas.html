@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% extends "layout.html" %}
+{% block title %}Ventas realizadas{% endblock %}
+
+{% block content %}
+<h1>📑 Historial de ventas</h1>
+
+{% if ventas %}
+    {% for v in ventas %}
+        <div class="card">
+            <strong>{{ v.producto.nombre }}</strong><br>
+            Cantidad: {{ v.cantidad }}<br>
+            Total: ${{ v.total }}<br>
+            Fecha: {{ v.fecha.strftime('%d/%m/%Y %H:%M') }}
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No se han realizado ventas aún.</p>
+{% endif %}
+{% endblock %}
+
+

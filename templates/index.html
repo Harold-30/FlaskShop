@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+{% block title %}Productos{% endblock %}
+
+{% block content %}
+<h1>📦 Productos en tienda</h1>
+
+{% if productos %}
+    {% for p in productos %}
+        <div class="card">
+            <strong>{{ p.nombre }}</strong><br>
+            Precio: ${{ p.precio }}<br>
+            Stock: {{ p.stock }}
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No hay productos disponibles.</p>
+{% endif %}
+{% endblock %}
+

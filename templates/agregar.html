@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block title %}Agregar producto{% endblock %}
+
+{% block content %}
+<h1>🆕 Agregar nuevo producto</h1>
+
+<form method="POST">
+    <p>Nombre: <input type="text" name="nombre" required></p>
+    <p>Precio: <input type="number" name="precio" step="0.01" required></p>
+    <p>Stock: <input type="number" name="stock" required></p>
+    <button class="btn" type="submit">Agregar</button>
+</form>
+{% endblock %}
